@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>招聘助手</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 移除 Coze WebSDK -->
+    <!-- <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.1.0-beta.1/libs/cn/index.js"></script> -->
+</head>
+<body>
+    <!-- 登录弹窗 -->
+    <div class="login-popup" id="loginPopup">
+        <div class="popup-content">
+            <img src="work.jpg" alt="辛苦了" class="popup-image">
+            <p class="popup-message">今天辛苦了</p>
+            <button id="closePopup" class="close-btn">关闭</button>
+        </div>
+    </div>
+    
+    <!-- 返回按钮 -->
+    <button id="backButton" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    
+    <!-- 内容区域 -->
+    <main id="content">
+        <!-- 首页内容 -->
+        <section id="home" class="page active">
+            <div class="link-container">
+                <iframe src="about:blank" data-src="https://qingflow.com/m/dashboard/aahmrqtqso02/view?exWsId=I9DKaOwpg9YXttvQmHJl7g" frameborder="0"></iframe>
+            </div>
+        </section>
+        
+        <!-- 推送记录内容 -->
+        <section id="pushRecords" class="page">
+            <!-- 添加子标签导航 -->
+            <div class="sub-tabs">
+                <div class="sub-tab active" data-target="candidateList">候选人列表</div>
+                <div class="sub-tab" data-target="carRentalList">租车列表</div>
+            </div>
+            
+            <!-- 子标签内容 -->
+            <div class="sub-content">
+                <!-- 候选人列表 -->
+                <div class="link-container sub-page active" id="candidateList">
+                    <iframe src="about:blank" data-src="https://qingflow.com/s/8felp5odk402?exWsId=I9DKaOwpg9YXttvQmHJl7g" frameborder="0"></iframe>
+                </div>
+                
+                <!-- 租车列表 -->
+                <div class="link-container sub-page" id="carRentalList">
+                    <iframe src="about:blank" data-src="https://qingflow.com/dashboard/aahmrqtqso02/view?exWsId=I9DKaOwpg9YXttvQmHJl7g" frameborder="0"></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 个人中心内容 -->
+        <section id="profile" class="page">
+            <div class="link-container">
+                <iframe src="about:blank" data-src="https://qingflow.com/dashboard/ab09oqvmso01/view?exWsId=I9DKaOwpg9YXttvQmHJl7g" frameborder="0"></iframe>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 底部导航栏 -->
+    <nav class="nav-bar">
+        <div class="nav-item active" data-target="home">
+            <i class="fas fa-home"></i>
+            <span>首页</span>
+        </div>
+        <div class="nav-item" data-target="pushRecords">
+            <i class="fas fa-history"></i>
+            <span>推送记录</span>
+        </div>
+        <div class="nav-item" data-target="profile">
+            <i class="fas fa-user"></i>
+            <span>个人中心</span>
+        </div>
+    </nav>
+    
+    <!-- 在现有脚本之前添加Coze SDK - 修改为官方推荐方式 -->
+    <script src="https://cdn.jsdelivr.net/npm/@coze/api@latest"></script>
+    <!-- 或尝试特定版本 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@coze/api@1.0.0/dist/index.min.js"></script> -->
+
+    <script src="app.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
